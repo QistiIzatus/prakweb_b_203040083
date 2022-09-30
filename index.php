@@ -21,7 +21,7 @@ $buku = query("SELECT * FROM buku");
 </head>
 
 <body class="luar">
-  <h1 class="judul">QistiIzatus.</h1>
+  <h1 class="judul">Daftar Buku.</h1>
 
   <a href="tambah.php">Tambah Data Buku</a>
   <br>
