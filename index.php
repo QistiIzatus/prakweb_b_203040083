@@ -16,7 +16,7 @@ $buku = query("SELECT * FROM buku");
 <head>
   <meta charset="UTF-8">
   <title>prakweb_2022_b_203040083</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 </head>
 
