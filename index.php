@@ -49,9 +49,8 @@ $buku = query("SELECT * FROM buku");
         <td><?= $sb['stok']; ?></td>
         <td><img src="img/<?= $sb['gambar']; ?>" alt="" width="100"></td>
         <td>
-          <a href="">ubah</a>
-          <a href="hapus.php?id_buku=<?= $sb['id_buku']; ?>" 
-          onclick=" return confirm('Yakin?');">hapus</a>
+          <a href="ubah.php?id=<?= $sb['id_buku']; ?>">ubah</a> |
+          <a href="hapus.php?id=<?= $sb['id_buku']; ?>" onclick="return confirm('apakah anda yakin?');">hapus</a>
         </td>
       </tr>
       <?php $i++; ?>

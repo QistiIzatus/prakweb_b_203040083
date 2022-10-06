@@ -2,13 +2,13 @@
 require 'function.php';
 
 // jika tidak ada id di url
-if (!isset($_SESSION['id_buku'])) {
+if (!isset($_SESSION['id'])) {
   header("Location: index.php");
   exit;
 }
 
 // mengambil id dari url
-$id = $_GET['id_buku'];
+$id = $_GET['id'];
 
 if (hapus($id) > 0) {
   echo "<script>

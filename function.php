@@ -46,4 +46,29 @@ function hapus($id)
   mysqli_query($conn, "DELETE FROM buku WHERE id_buku = $id") or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
+
+function ubah($data)
+{
+  $conn = koneksi();
+
+  $id_buku= htmlspecialchars($data['id']);
+  $nama_buku = htmlspecialchars($data['nama_buku']);
+  $penulis_buku =  htmlspecialchars($data['penulis_buku']);
+  $tahun_penerbit = htmlspecialchars($data['tahun_penerbit']);
+  $stok = htmlspecialchars($data['stok']);
+  $gambar = htmlspecialchars($data['gambar']);
+
+  $query = "UPDATE buku SET
+              nama_buku = '$nama_buku',
+              penulis_buku = '$penulis_buku',
+              tahun_penerbit = '$tahun_penerbit',
+              stok = '$stok',
+              gambar = '$gambar'
+            WHERE id_buku = $id_buku";
+
+  mysqli_query($conn, $query) or die(mysqli_error($conn));
+  echo mysqli_error($conn);
+  return mysqli_affected_rows($conn);
+}
+
 ?>
