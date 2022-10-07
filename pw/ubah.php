@@ -10,7 +10,7 @@ if (!isset($_GET['id'])) {
 // ambil id dari url
 $id = $_GET['id'];
 
-// query mbuku berdasarkan id
+// query mahasiswa berdasarkan id
 $sb = query("SELECT * FROM buku WHERE id_buku = $id");
 
 
@@ -43,29 +43,29 @@ if (isset($_POST['ubah'])) {
 <body>
   <h3>Form Ubah Data Buku</h3>
   <form action="" method="POST">
-    <input type="hidden" name="id" value="<?= $sb['id']; ?>">
+    <input type="hidden" name="id" value="<?= $sb['id_buku']; ?>">
     <ul>
       <li>
         <label>
-          Nama Buku :
+         nama Buku :
           <input type="text" name="nama_buku" autofocus required value="<?= $sb['nama_buku']; ?>">
         </label>
       </li>
       <li>
         <label>
-          Penulis Buku :
+          penulis buku :
           <input type="text" name="penulis_buku" required value="<?= $sb['penulis_buku']; ?>">
         </label>
       </li>
       <li>
         <label>
-          Tahun Penerbit :
+          tahun penerbit :
           <input type="text" name="tahun_penerbit" required value="<?= $sb['tahun_penerbit']; ?>">
         </label>
       </li>
       <li>
         <label>
-          Stok :
+          stok :
           <input type="text" name="stok" required value="<?= $sb['stok']; ?>">
         </label>
       </li>

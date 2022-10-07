@@ -12,8 +12,8 @@ function query($query)
   $result = mysqli_query($conn, $query);
 
   // jika hasilnya hanya 1 data
- if (mysqli_num_rows($result) == 1) {
-   return mysqli_fetch_assoc($result);
+  if (mysqli_num_rows($result) == 1) {
+    return mysqli_fetch_assoc($result);
   }
 
   $rows = [];
@@ -23,6 +23,7 @@ function query($query)
 
   return $rows;
 }
+
 function tambah($data)
 {
   $conn = koneksi();
@@ -33,10 +34,10 @@ function tambah($data)
   $stok = htmlspecialchars($data['stok']);
   $gambar = htmlspecialchars($data['gambar']);
 
-  $query = "INSERT INTO buku VALUES (null, '$nama_buku', '$penulis_buku', '$tahun_penerbit', '$stok ', '$gambar')";
+  $query = "INSERT INTO buku VALUES (null, '$nama_buku', '$penulis_buku', '$tahun_penerbit', '$stok', '$gambar')";
 
-  mysqli_query($conn, $query) or die(mysqli_error($conn));
-  echo mysqli_error($conn);
+  mysqli_query($conn, $query);
+  //echo mysqli_error($conn);
   return mysqli_affected_rows($conn);
 }
 
@@ -51,12 +52,13 @@ function ubah($data)
 {
   $conn = koneksi();
 
-  $id_buku= htmlspecialchars($data['id']);
+  $id_buku = htmlspecialchars($data['id']);
   $nama_buku = htmlspecialchars($data['nama_buku']);
   $penulis_buku =  htmlspecialchars($data['penulis_buku']);
   $tahun_penerbit = htmlspecialchars($data['tahun_penerbit']);
   $stok = htmlspecialchars($data['stok']);
   $gambar = htmlspecialchars($data['gambar']);
+
 
   $query = "UPDATE buku SET
               nama_buku = '$nama_buku',
@@ -70,5 +72,3 @@ function ubah($data)
   echo mysqli_error($conn);
   return mysqli_affected_rows($conn);
 }
-
-?>

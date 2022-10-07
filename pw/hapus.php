@@ -2,7 +2,7 @@
 require 'function.php';
 
 // jika tidak ada id di url
-if (!isset($_SESSION['id'])) {
+if (!isset($_GET['id'])) {
   header("Location: index.php");
   exit;
 }
@@ -21,4 +21,3 @@ if (hapus($id) > 0) {
           document.location.href = 'index.php';    
         </script>";
 }
-?>
